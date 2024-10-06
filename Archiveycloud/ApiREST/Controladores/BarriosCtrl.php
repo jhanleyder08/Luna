@@ -10,7 +10,8 @@
 						
 		function __construct($peticion){
             
-           
+            Self::$pdofull = ConexionDB::obtenerInstancia()->obtenerDB();
+
 			switch ($peticion[0]) {
 				case 'Listar':
 					return self::Listar($this);
