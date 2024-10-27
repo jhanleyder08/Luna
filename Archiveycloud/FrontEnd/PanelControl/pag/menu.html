@@ -19,8 +19,7 @@
             <ul class="nav navbar-nav">
                 <li><a id="ControlPanelUser" href="#cpusuarios" class="inf">Usuarios</a></li>
                 <li><a id="ControlPanelPaciente" href="#cppaciente" class="inf">Pacientes</a></li>
-                <li><a id="ControlPanelVer_historiasclinicas" href="#cpver_historiasclinicas" class="inf">Ver Historias Clinicas</a></li>
-                <li><a id="ControlPanelCum_Programa" href="#cpcum_programas" class="inf">Cumplimiento Programa</a></li>
+                  <li><a id="ControlPanelCum_Programa" href="#cpcum_programas" class="inf">Cumplimiento Programa</a></li>
                 
                 <li><a id="ControlPanelMedicamento" href="#cpmedicamento" class="inf">Medicamentos</a></li>
 
@@ -581,6 +580,9 @@
 
   </div>
 
+
+
+
   <div class="row">
 
     <div class="table-responsive">
@@ -612,9 +614,163 @@
 
 </div>
 
+  <!-- -------------------------------------------------- CUM PROGRAMAS ---------------------------------------------------- -->
 
+  <div id="cpcum_programas" class="container center-block oculto">
+    <div id="alertas_cum_programas"> </div>
+  
+    <h1 class="blue center title">Gestion y Control de Cumplimiento del Programa</h1>
+    <button class="btn btn-primary agregar" id="agregarCum_Programa">Nuevo Cum Programa<span
+        class="glyphicon glyphicon-plus"></span></button>
+  
+    <div class="container">
+  
+      <form class="form-horizontal hidden" id="EditarCum_Programa">
+  
+        <div class="form-group">
+          <label for="ecpid_programa" class="col-sm-offset-3 col-sm-2 control-label">Id Programa:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="ecpid_programa" placeholder="Id Programa" required disabled>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ecpid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+          <div class="col-sm-4">
+            <select class="form-control" id="ecpid_cedula">
+              <option value="">Default</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ecpfec_ingreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Ingreso:</label>
+          <div class="col-sm-4">
+            <div class="input-group date">
+              <input type="text" class="form-control" id="ecpfec_ingreso" placeholder="Fec Ingreso" required>
+              <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ecpfec_egreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Egreso:</label>
+          <div class="col-sm-4">
+            <div class="input-group date">
+              <input type="text" class="form-control" id="ecpfec_egreso" placeholder="Fec Egreso" required>
+              <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ecpcausa_egreso" class="col-sm-offset-3 col-sm-2 control-label">Causa Egreso:</label>
+          <div class="col-sm-4">
+            <textarea class="form-control" rows="5" id="ecpcausa_egreso" placeholder="Descripcion de la causa"
+              required></textarea>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ecpfec_hospitalizacion" class="col-sm-offset-3 col-sm-2 control-label">Fec Hospitalizacion:</label>
+          <div class="col-sm-4">
+            <div class="input-group date">
+              <input type="text" class="form-control" id="ecpfec_hospitalizacion" placeholder="Fec Hospitalizacion"
+                required>
+              <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarActualizarCum_Programa">Cancelar</button>
+          <button type="submit" class="btn btn-success">Actualizar</button>
+        </div>
+      </form>
+  
+      <form class="form-horizontal hidden" id="CrearNuevoCum_Programa">
+  
+        <div class="form-group">
+          <label for="ncmid_programa" class="col-sm-offset-3 col-sm-2 control-label">Id Programa:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="ncmid_programa" placeholder="Id Programa" required disabled>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ncpid_cedula" class="col-sm-offset-3 col-sm-2 control-label">Documento:</label>
+          <div class="col-sm-4">
+            <select class="form-control" id="ncpid_cedula">
+              <option value="">Default</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ncpfec_ingreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Ingreso:</label>
+          <div class="col-sm-4">
+            <div class="input-group date">
+              <input type="text" class="form-control" id="ncpfec_ingreso" placeholder="Fec Ingreso" required>
+              <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ncpfec_egreso" class="col-sm-offset-3 col-sm-2 control-label">Fec Egreso:</label>
+          <div class="col-sm-4">
+            <div class="input-group date">
+              <input type="text" class="form-control" id="ncpfec_egreso" placeholder="Fec Egreso" required>
+              <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ncpcausa_egreso" class="col-sm-offset-3 col-sm-2 control-label">Causa Egreso:</label>
+          <div class="col-sm-4">
+            <textarea class="form-control" rows="5" id="ncpcausa_egreso" placeholder="Descripcion de la causa"
+              required></textarea>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="ncpfec_hospitalizacion" class="col-sm-offset-3 col-sm-2 control-label">Fec Hospitalizacion:</label>
+          <div class="col-sm-4">
+            <div class="input-group date">
+              <input type="text" class="form-control" id="ncpfec_hospitalizacion" placeholder="Fec Hospitalizacion"
+                required>
+              <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-default" id="CancelarCrearCum_Programa">Cancelar</button>
+          <button type="submit" class="btn btn-success">Crear</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="table-responsive">
+      <table id="cum_programa_table" class="table table-hover">
+        <thead>
+          <tr class="blue">
+            <td>Documento</td>
+            <td>Paciente</td>
+            <td>Fec Ingreso</td>
+            <td>Fec Egreso</td>
+            <td>Fec Hospitalizacion</td>
+            <td>Editar</td>
+          </tr>
+        </thead>
+        <tbody id="Cum_Programas_detalle">
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-
+  
 
 
 
@@ -626,4 +782,6 @@
 <script src="js/PaneldeControlCiudades.js"></script>
 <script src="js/PaneldeControlMedicamentos.js"></script>
 <script src="js/PaneldeControlPacientes.js"></script>
+<script src="js/PaneldeControlCum_Programas.js"></script>
+
 

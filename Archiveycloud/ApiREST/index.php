@@ -7,6 +7,7 @@
     require_once 'Controladores/CiudadesCtrl.php';
     require_once 'Controladores/MedicamentosCtrl.php';
     require_once 'Controladores/PacientesCtrl.php';
+    require_once 'Controladores/Cum_ProgramasCtrl.php';
     
 
 	/*
@@ -30,7 +31,9 @@
             'BarriosCtrl',
             'CiudadesCtrl',
             'MedicamentosCtrl',
-            'PacientesCtrl'
+            'PacientesCtrl',
+            'Cum_ProgramasCtrl'
+            
         );
 
         if (in_array( $recurso, $recursos_existentes)){
@@ -53,7 +56,11 @@
                         break;
                     case 'PacientesCtrl':
                         $instancia = new PacientesCtrl($peticion);
-                        break;    
+                        break;
+                    case 'Cum_ProgramasCtrl':
+                        $instancia = new Cum_ProgramasCtrl($peticion);
+                        break;
+                       
                 }
 
                 $respuesta = $instancia->respuesta;

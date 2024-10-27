@@ -3,6 +3,8 @@ var ControlBarrios        = false;
 var ControlCiudades       = false;
 var ControlMedicamentos   = false;
 var ControlPacientes      = false;
+var ControlCum_Programas  = false;
+var ControlHistoriasclinicas  = false;
 
 var UsuarioActual = jQuery.parseJSON(sessionStorage.getItem('user'));
 
@@ -68,6 +70,19 @@ $('#ControlPanelPaciente').click(function(event) {
     	$('#n_img').removeClass('hidden');
 	}
 });
+
+$('#ControlPanelCum_Programa').click(function(event) {
+	if(!ControlCum_Programas){
+		$('#n_img').addClass('hidden');
+		listarCum_Programa();
+		ControlCum_Programas = true;
+	}else{
+		ControlCum_Programas = false;
+		$('#n_img').removeClass('hidden');
+	}
+});
+
+
 
 jQuery(document).ready(function(){
     $(".oculto").hide();              
