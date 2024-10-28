@@ -4,7 +4,7 @@ var ControlCiudades       = false;
 var ControlMedicamentos   = false;
 var ControlPacientes      = false;
 var ControlCum_Programas  = false;
-var ControlHistoriasclinicas  = false;
+
 
 var UsuarioActual = jQuery.parseJSON(sessionStorage.getItem('user'));
 

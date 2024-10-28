@@ -92,7 +92,7 @@
 			                   pacientes.seguridad_social) 
 			                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 					$sentencia = Self::$pdofull->prepare ( $insert );
-					$sentencia->bindParam ( 1, $paciente['id_paciente']);
+					$sentencia->bindParam ( 1, $paciente['id_cedula']);
 					$sentencia->bindParam ( 2, $paciente['nombres']);
 					$sentencia->bindParam ( 3, $paciente['apellidos']);
 					$sentencia->bindParam ( 4, $paciente['fec_nac']);
