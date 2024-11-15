@@ -138,3 +138,7 @@
 #63 C:\\xampp\\htdocs\\g_document-main\\Archiveycloud-app\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\xampp\\\\htdocs...')
 #64 {main}
 "} 
+[2024-11-13 14:17:19] local.ERROR: Trait "Spatie\Permission\Traits\HasRoles" not found {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Trait \"Spatie\\Permission\\Traits\\HasRoles\" not found at C:\\xampp\\htdocs\\g_document-main\\Archiveycloud-app\\app\\Models\\User.php:13)
+[stacktrace]
+#0 {main}
+"} 

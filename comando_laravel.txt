@@ -1,0 +1,39 @@
+-- INSTALACION DE LARAVEL 9
+composer create-project --prefer-dist laravel/laravel:^9.* Archiveycloud-app
+
+
+
+-- INSTALAR LA AUTENTICACION
+
+-- Ejecutemos el siguiente comando para instalar el paquete laravel ui con el siguiente comando
+composer require laravel/ui
+
+
+php artisan ui bootstrap --auth
+
+--Ahora ejecutemos el siguiente comando para instalar npm:
+npm install 
+
+npm run dev
+
+
+
+
+
+-- 	MIGRACIONES EN LARAVEL
+
+php artisan migrate
+
+php artisan make:controller UserController --resource
+
+php artisan make:seeder UserSeeder
+
+php artisan migrate:refresh --seed
+
+
+
+composer require laraveles/spanish
+php artisan vendor:publish --tag=lang
+
+php artisan cache:clear
+php artisan config:clear
