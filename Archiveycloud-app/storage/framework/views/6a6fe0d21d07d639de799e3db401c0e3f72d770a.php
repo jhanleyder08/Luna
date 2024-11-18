@@ -28,11 +28,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">                    
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('general')): ?>
+                        <ul class="navbar-nav me-auto">
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('general.users.index')): ?>    
+                                <a class="nav-link" href="#">Usuarios</a>
+                            <?php endif; ?>
+                        </ul>
 
-                    </ul>
+                        <ul class="navbar-nav me-auto">
+                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('general.roles.index')): ?>
+                                <a class="nav-link" href="#">Roles</a>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -80,5 +89,4 @@
         </main>
     </div>
 </body>
-</html>
-<?php /**PATH C:\xampp\htdocs\g_document-main\Archiveycloud-app\resources\views/layouts/app.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\xampp\htdocs\g_document-main\Archiveycloud-app\resources\views/layouts/app.blade.php ENDPATH**/ ?>

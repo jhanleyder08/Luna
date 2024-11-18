@@ -27,11 +27,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">                    
+                    @can('general')
+                        <ul class="navbar-nav me-auto">
+                            @can('general.users.index')    
+                                <a class="nav-link" href="#">Usuarios</a>
+                            @endcan
+                        </ul>
 
-                    </ul>
+                        <ul class="navbar-nav me-auto">
+                            @can('general.roles.index')
+                                <a class="nav-link" href="#">Roles</a>
+                            @endcan
+                        </ul>
+                    @endcan
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
