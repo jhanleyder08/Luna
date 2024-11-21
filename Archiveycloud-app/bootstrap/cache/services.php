@@ -39,6 +39,7 @@
     35 => 'App\\Providers\\RouteServiceProvider',
     36 => 'Laraveles\\Spanish\\SpanishServiceProvider',
     37 => 'Spatie\\Permission\\PermissionServiceProvider',
+    38 => 'Spatie\\Permission\\PermissionServiceProvider',
   ),
   'eager' => 
   array (
@@ -66,6 +67,7 @@
     21 => 'App\\Providers\\RouteServiceProvider',
     22 => 'Laraveles\\Spanish\\SpanishServiceProvider',
     23 => 'Spatie\\Permission\\PermissionServiceProvider',
+    24 => 'Spatie\\Permission\\PermissionServiceProvider',
   ),
   'deferred' => 
   array (
