@@ -6646,3 +6646,11 @@
 #45 C:\\xampp\\htdocs\\g_document-main\\Archiveycloud-app\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #46 {main}
 "} 
+[2024-11-25 01:16:03] local.ERROR: Cannot declare class App\Http\Controllers\DptoController, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Http\\Controllers\\DptoController, because the name is already in use at C:\\xampp\\htdocs\\g_document-main\\Archiveycloud-app\\database\\migrations\\2024_11_25_011017_create_dptos_table.php:9)
+[stacktrace]
+#0 {main}
+"} 
+[2024-11-25 01:21:57] local.ERROR: Cannot declare class App\Http\Controllers\DptoController, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Http\\Controllers\\DptoController, because the name is already in use at C:\\xampp\\htdocs\\g_document-main\\Archiveycloud-app\\database\\migrations\\2024_11_25_011017_create_dptos_table.php:9)
+[stacktrace]
+#0 {main}
+"} 
