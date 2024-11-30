@@ -15,6 +15,23 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href= "{{ asset('fonts/ionicons.min.css') }}">
+
+    <link href="https://cdn.datatables.net/v/bs4/jq-3.7.0/jszip-3.10.1/dt-1.13.6/af-2.6.0/b-2.4.2/b-colvis-2.4.2/b-html5-2.4.2/b-print-2.4.2/r-2.5.0/sc-2.2.0/sl-1.7.0/datatables.min.css" rel="stylesheet">
+ 
+
+
 </head>
 <body>
     <div id="app">
@@ -31,7 +48,7 @@
                     @can('general')
                         <ul class="navbar-nav me-auto">
                             @can('general.users.index')    
-                                <a class="nav-link" href="#">Usuarios</a>
+                                <a class="nav-link" href="{{ route('general.users.index') }}">Usuarios</a>
                             @endcan
                         </ul>
 
@@ -85,5 +102,15 @@
             @yield('content')
         </main>
     </div>
+
+
+    <!-- JavaScripts -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/jq-3.7.0/jszip-3.10.1/dt-1.13.6/af-2.6.0/b-2.4.2/b-colvis-2.4.2/b-html5-2.4.2/b-print-2.4.2/r-2.5.0/sc-2.2.0/sl-1.7.0/datatables.min.js"></script>
+
+    @yield('js')
 </body>
 </html>

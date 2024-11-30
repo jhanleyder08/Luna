@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\User;
+use DataTables;
+
 class UserController extends Controller
 {
     /**
@@ -11,9 +14,23 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $users = User::query();
+
+        if ($request->ajax()){
+
+            return datatables()
+            ->eloquent($users)
+            ->addColumn('action', function ($users){
+                return view('general.users.partials.datatablesAction', compact('users'));
+            })
+            ->rawColumns(['action']) 
+            ->toJson();
+
+        }
+
+        return view('general.users.index', compact('users'));
     }
 
     /**
