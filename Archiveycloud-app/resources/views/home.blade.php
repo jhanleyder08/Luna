@@ -15,7 +15,7 @@
                     @endif
                     
 
-                    Bienvenid@ SUPER ADMINISTRADORs
+                    Bienvenid@
                 </div>
             </div>
         </div>

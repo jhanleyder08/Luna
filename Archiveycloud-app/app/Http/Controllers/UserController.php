@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Spatie\permission\Models\Role;
 use DataTables;
 
 class UserController extends Controller
@@ -40,7 +41,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::get();
+        return view ('general.users.create', compact('roles'));
     }
 
     /**
@@ -62,7 +64,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('general.users.show', compact('user'));
     }
 
     /**

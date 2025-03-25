@@ -1,9 +1,9 @@
 -- INSTALACION DE LARAVEL 9
-composer create-project --prefer-dist laravel/laravel:^9.* Archiveycloud-app
+composer create-project --prefer-dist laravel/laravel:^9.* adso7677-app
 
 
 
--- INSTALAR LA AUTENTICACIONn
+-- INSTALAR LA AUTENTICACION
 
 -- Ejecutemos el siguiente comando para instalar el paquete laravel ui con el siguiente comando
 composer require laravel/ui
@@ -15,8 +15,6 @@ php artisan ui bootstrap --auth
 npm install 
 
 npm run dev
-
-
 
 
 
@@ -37,6 +35,8 @@ php artisan vendor:publish --tag=lang
 
 php artisan cache:clear
 php artisan config:clear
+
+
 
 -- ROLES Y PERMISOS EN LARAVEL
 
@@ -71,3 +71,17 @@ php artisan make:model Dpto -a
 php artisan make:model Ciudad -a
 
 
+
+
+-- DATATABLES JS
+
+composer require yajra/laravel-datatables-oracle:"^10.0"
+composer update --with-all-dependencies
+
+php artisan vendor:publish --tag=datatables
+
+composer require datatables.net/datatables.net-bs4
+composer require datatables.net/datatables.net-autofill-bs4
+composer require datatables.net/datatables.net-buttons-bs4
+composer require datatables.net/datatables.net-responsive-bs4
+composer require datatables.net/datatables.net-scroller-bs4
